@@ -1,14 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black_fuze"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MatchDetailsFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="League + serie"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_team_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_header">
+
+        <ImageView
+            android:id="@+id/image_team_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/name_team_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="Black Belt"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_team_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_team_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_header">
+
+        <ImageView
+            android:id="@+id/image_team_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/name_team_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="Black Belt"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_team_2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_players_left"
+        android:paddingVertical="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_team_1"
+        app:layout_constraintVertical_bias="0.509">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_player_1"
+            android:layout_width="174dp"
+            android:layout_height="54dp"
+            android:background="@drawable/player_left_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/nickname_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                android:text="NickName"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/player_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Nome Jogador"
+                android:textColor="@color/player_name"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/nickname_1"
+                app:layout_constraintTop_toBottomOf="@+id/nickname_1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_player_2"
+            android:layout_width="174dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/player_left_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_player_1">
+
+            <TextView
+                android:id="@+id/nickname_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                android:text="NickName"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/player_name_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Nome Jogador"
+                android:textColor="@color/player_name"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/nickname_2"
+                app:layout_constraintTop_toBottomOf="@+id/nickname_2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_player_3"
+            android:layout_width="174dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/player_left_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_player_2">
+
+            <TextView
+                android:id="@+id/nickname_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                android:text="NickName"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/player_name_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Nome Jogador"
+                android:textColor="@color/player_name"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/nickname_3"
+                app:layout_constraintTop_toBottomOf="@+id/nickname_3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_player_4"
+            android:layout_width="174dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/player_left_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_player_3">
+
+            <TextView
+                android:id="@+id/nickname_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                android:text="NickName"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/player_name_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Nome Jogador"
+                android:textColor="@color/player_name"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/nickname_4"
+                app:layout_constraintTop_toBottomOf="@+id/nickname_4" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_player_5"
+            android:layout_width="174dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/player_left_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_player_4">
+
+            <TextView
+                android:id="@+id/nickname_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                android:text="NickName"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/player_name_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Nome Jogador"
+                android:textColor="@color/player_name"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/nickname_5"
+                app:layout_constraintTop_toBottomOf="@+id/nickname_5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/versus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VS"
+        android:textColor="@color/white_50"
+        app:layout_constraintBottom_toBottomOf="@+id/container_team_2"
+        app:layout_constraintEnd_toStartOf="@+id/container_team_2"
+        app:layout_constraintStart_toEndOf="@+id/container_team_1"
+        app:layout_constraintTop_toTopOf="@+id/container_team_2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,5 +10,8 @@
     <color name="black_fuze">#161621</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark_gray">#272639</color>
-    <color name="opaque_white">#33FFFFFF</color>
+    <color name="light_gray">#C4C4C4</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="player_name">#6C6B7E</color>
 </resources>

@@ -142,7 +142,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/opaque_white"
+        android:background="@color/white_20"
 
         app:layout_constraintBottom_toTopOf="@id/container_league"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,9 +151,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/versus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white_50"
         android:text="VS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/container_team_2"
