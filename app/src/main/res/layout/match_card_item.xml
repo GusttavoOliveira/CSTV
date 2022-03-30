@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="24dp"
     android:layout_marginVertical="23dp"
     android:background="@drawable/card_background"
-    tools:context=".MatchesListFragment">
+    tools:context=".matchList.MatchesListFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_date"
