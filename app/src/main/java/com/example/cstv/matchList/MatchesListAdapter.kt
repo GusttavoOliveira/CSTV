@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cstv.R
 import com.example.cstv.databinding.MatchCardItemBinding
+import com.example.cstv.entities.MatchItem
 import java.util.zip.Inflater
 
 class MatchesListAdapter(
     private val context: Context,
-    val listCards: List<Card>
+    val listMatches: ArrayList<MatchItem>
 ) : RecyclerView.Adapter<MatchesListAdapter.CardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -23,11 +24,11 @@ class MatchesListAdapter(
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        holder.bind(listCards[position])
+        holder.bind(listMatches[position])
     }
 
     override fun getItemCount(): Int {
-        return listCards.size
+        return listMatches.size
     }
 
     inner class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -41,8 +42,8 @@ class MatchesListAdapter(
         private val date = binding.date
 
 
-        fun bind(card: Card){
-            //Fazer as propriedades receberem seus respectivos strings ou URLs
+        fun bind(match: MatchItem){
+
         }
 
 

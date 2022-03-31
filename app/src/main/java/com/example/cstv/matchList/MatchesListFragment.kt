@@ -5,16 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cstv.R
+import com.example.cstv.databinding.FragmentMatchesListBinding
 
 class MatchesListFragment : Fragment() {
+    private lateinit var binding: FragmentMatchesListBinding
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_matches_list, container, false)
+        binding = FragmentMatchesListBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
+
+
 
 }

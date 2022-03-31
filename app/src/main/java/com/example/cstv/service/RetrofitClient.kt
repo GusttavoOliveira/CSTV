@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitClient private constructor(){
 
     companion object{
+        const val TOKEN = "JtjgCMOZruV657veNah1tv9ijnie915vLHXvP0g6cnR8KEAdpyM"
 
         private lateinit var retrofit: Retrofit
         private const val pandaScoreUrl = "https://api.pandascore.co/"
