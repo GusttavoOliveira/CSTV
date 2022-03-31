@@ -10,11 +10,10 @@ import coil.transform.CircleCropTransformation
 import com.example.cstv.R
 import com.example.cstv.databinding.MatchCardItemBinding
 import com.example.cstv.entities.MatchItem
-import java.util.zip.Inflater
 
 class MatchesListAdapter(
     private val context: Context,
-    val listMatches: ArrayList<MatchItem>
+    val listMatches: MutableList<MatchItem>
 ) : RecyclerView.Adapter<MatchesListAdapter.CardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -46,21 +45,21 @@ class MatchesListAdapter(
 
         fun bind(match: MatchItem) {
 
-            if (match.opponents[0].imageUrl != null) {
-                imageTeam1.load(match.opponents[0].imageUrl)
-            } else {
+//            if (match.opponents[0]?.opponent?.imageUrl != null) {
+//                imageTeam1.load(match.opponents[0]?.opponent?.imageUrl)
+//            } else {
                 imageTeam1.load(R.drawable.withoutphoto) {
                     transformations(CircleCropTransformation())
                 }
-            }
+//            }
 
-            if (match.opponents[1].imageUrl != null) {
-                imageTeam2.load(match.opponents[1].imageUrl)
-            } else {
+//            if (match.opponents[1]?.opponent?.imageUrl != null) {
+//                imageTeam2.load(match.opponents[1]?.opponent?.imageUrl)
+//            } else {
                 imageTeam2.load(R.drawable.withoutphoto) {
                     transformations(CircleCropTransformation())
                 }
-            }
+//            }
 
             if (match.league.imageUrl != null) {
                 leagueLogo.load(match.league.imageUrl)
@@ -70,8 +69,8 @@ class MatchesListAdapter(
                 }
             }
 
-            nameTeam1.text = match.opponents[0].teamName
-            nameTeam2.text = match.opponents[1].teamName
+//            nameTeam1.text = match.opponents[0]?.opponent?.teamName
+//            nameTeam2.text = match.opponents[1]?.opponent?.teamName
             leagueName.text = ("${match.league.leagueName} ${match.serie.serieName}")
             date.text = match.begin_at
         }

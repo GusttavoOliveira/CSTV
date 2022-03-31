@@ -1,3 +1,3 @@
 package com.example.cstv.entities
 
-class Match : ArrayList<MatchItem>()
+abstract class Match(override val size: Int) : MutableList<MatchItem>
