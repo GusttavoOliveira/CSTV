@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.cstv.R
 import com.example.cstv.databinding.MatchCardItemBinding
 import com.example.cstv.entities.MatchItem
@@ -42,10 +44,36 @@ class MatchesListAdapter(
         private val date = binding.date
 
 
-        fun bind(match: MatchItem){
+        fun bind(match: MatchItem) {
 
+            if (match.opponents[0].imageUrl != null) {
+                imageTeam1.load(match.opponents[0].imageUrl)
+            } else {
+                imageTeam1.load(R.drawable.withoutphoto) {
+                    transformations(CircleCropTransformation())
+                }
+            }
+
+            if (match.opponents[1].imageUrl != null) {
+                imageTeam2.load(match.opponents[1].imageUrl)
+            } else {
+                imageTeam2.load(R.drawable.withoutphoto) {
+                    transformations(CircleCropTransformation())
+                }
+            }
+
+            if (match.league.imageUrl != null) {
+                leagueLogo.load(match.league.imageUrl)
+            } else {
+                leagueLogo.load(R.drawable.withoutphoto) {
+                    transformations(CircleCropTransformation())
+                }
+            }
+
+            nameTeam1.text = match.opponents[0].teamName
+            nameTeam2.text = match.opponents[1].teamName
+            leagueName.text = ("${match.league.leagueName} ${match.serie.serieName}")
+            date.text = match.begin_at
         }
-
-
     }
 }

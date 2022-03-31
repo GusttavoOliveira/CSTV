@@ -1,10 +1,12 @@
 package com.example.cstv.entities
 
+import com.google.gson.annotations.SerializedName
+
 data class League(
-    val id: Int,
-    val image_url: String,
+    @SerializedName("id") val leagueId: Int,
+    @SerializedName("image_url") val imageUrl: String?,
     val modified_at: String,
-    val name: String,
+    @SerializedName("name") val leagueName: String,
     val slug: String,
     val url: Any
 )

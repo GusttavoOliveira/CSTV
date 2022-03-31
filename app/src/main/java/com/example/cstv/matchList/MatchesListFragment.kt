@@ -19,9 +19,13 @@ class MatchesListFragment : Fragment() {
     ): View? {
         binding = FragmentMatchesListBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        recyclerView = binding.cardsRecycler
+        recyclerView.adapter = MatchesListAdapter(requireContext())
+    }
 
 }
