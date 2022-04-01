@@ -10,6 +10,6 @@ data class TeamsItem(
     val location: String,
     val modified_at: String,
     @SerializedName("name") val teamName: String,
-    val players: List<Player>,
+    val players: List<Player?>,
     val slug: String
 )

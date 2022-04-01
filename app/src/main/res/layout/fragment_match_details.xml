@@ -28,6 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/back_arrow"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_arrow_back"
@@ -138,6 +139,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_1"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -197,6 +199,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_2"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -254,6 +257,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_3"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -311,6 +315,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_4"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -370,6 +375,7 @@
 
 
                 <ImageView
+                    android:id="@+id/photo_5"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -440,6 +446,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_6"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -499,6 +506,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_7"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -556,6 +564,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_8"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -613,6 +622,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/photo_9"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"
@@ -672,6 +682,7 @@
 
 
                 <ImageView
+                    android:id="@+id/photo_10"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:src="@color/light_gray"

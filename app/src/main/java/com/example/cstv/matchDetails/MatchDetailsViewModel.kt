@@ -1,5 +1,6 @@
 package com.example.cstv.matchDetails
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cstv.entities.TeamsItem
@@ -11,14 +12,15 @@ class MatchDetailsViewModel: ViewModel() {
 
     private val mRepositoryTeams = RepositoryTeams()
 
-    private var mTeamsList = MutableLiveData<List<TeamsItem>>()
-    var teamsList = mTeamsList
+    private var mTeam1 = MutableLiveData<TeamsItem>()
+    var team1 = mTeam1
 
-    var teamNames: String = ""
+    private var mTeam2 = MutableLiveData<TeamsItem?>()
+    var team2 = mTeam2
 
     private lateinit var errorMessage: String
 
-    fun listTeams() {
+    fun listTeams(teamNames: String) {
 
         mRepositoryTeams.listTeams(
             RetrofitClient.TOKEN,
@@ -26,11 +28,17 @@ class MatchDetailsViewModel: ViewModel() {
             object : TeamsListeners {
 
                 override fun onSucces(entity: List<TeamsItem>) {
-                    teamsList.value = entity
+                    team1.value = entity[0]
+                    if(entity.size == 2) {
+                        team2.value = entity[1]
+                    }else{
+                        team2.value = null
+                    }
                 }
 
                 override fun onFailure(message: String) {
                     errorMessage = message
+                    Log.e("MatchDetails", "onFailure: $errorMessage", )
                 }
 
             })

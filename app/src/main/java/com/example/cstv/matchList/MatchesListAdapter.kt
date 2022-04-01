@@ -1,6 +1,7 @@
 package com.example.cstv.matchList
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -89,30 +90,45 @@ class MatchesListAdapter(
             leagueSerie = "${match.league.leagueName} ${match.serie.serieName}"
 
             if (match.opponents.isNotEmpty()) {
-                imageUrlTeam1 = match.opponents[0].opponent.imageUrl
-                imageUrlTeam2 = match.opponents[1].opponent.imageUrl
-                stringNameTeam1 = match.opponents[0].opponent?.teamName
-                stringNameTeam2 = match.opponents[1].opponent?.teamName
 
-
-                if (imageUrlTeam1 != null) {
-                    imageTeam1.load(imageUrlTeam1)
+                if (match.opponents[0]?.opponent?.imageUrl != null) {
+                    imageTeam1.load(match.opponents[0]?.opponent?.imageUrl)
+                    imageUrlTeam1 = match.opponents[0]?.opponent?.imageUrl
                 } else {
-                    imageTeam1.load(R.drawable.withoutphoto) {
+                    imageTeam1.load(R.drawable.without_photo) {
                         transformations(CircleCropTransformation())
                     }
                 }
-
-                if (imageUrlTeam2 != null) {
-                    imageTeam2.load(imageUrlTeam2)
+                Log.d("MatchesListAdapter", "bind: ${match.opponents.size}")
+                if(match.opponents.size == 2) {
+                    if (match.opponents[1]?.opponent?.imageUrl != null) {
+                        imageTeam2.load(match.opponents[1]?.opponent?.imageUrl)
+                        imageUrlTeam2 = match.opponents[1]?.opponent?.imageUrl
+                    }
                 } else {
-                    imageTeam2.load(R.drawable.withoutphoto) {
+                    imageTeam2.load(R.drawable.without_photo) {
                         transformations(CircleCropTransformation())
                     }
+                    imageUrlTeam2 = null
                 }
 
-                nameTeam1.text = stringNameTeam1
-                nameTeam2.text = stringNameTeam2
+                if(match.opponents[0]?.opponent?.teamName != null) {
+                    nameTeam1.text = match.opponents[0]?.opponent?.teamName
+                    stringNameTeam1 = match.opponents[0]?.opponent?.teamName
+                }else{
+                    nameTeam1.text = context.getString(R.string.desconhecido)
+                }
+
+                if(match.opponents.size == 2) {
+                    if (match.opponents[1]?.opponent?.teamName != null) {
+                        nameTeam2.text = match.opponents[1]?.opponent?.teamName
+                        stringNameTeam2 = match.opponents[1]?.opponent?.teamName
+                    }
+                }else{
+                    nameTeam1.text = context.getString(R.string.desconhecido)
+                    stringNameTeam2 = context.getString(R.string.desconhecido)
+                }
+
             } else {
 
                 imageUrlTeam1 = null
@@ -120,11 +136,11 @@ class MatchesListAdapter(
                 stringNameTeam1 = null
                 stringNameTeam2 = null
 
-                imageTeam1.load(R.drawable.withoutphoto) {
+                imageTeam1.load(R.drawable.without_photo) {
                     transformations(CircleCropTransformation())
                 }
 
-                imageTeam2.load(R.drawable.withoutphoto) {
+                imageTeam2.load(R.drawable.without_photo) {
                     transformations(CircleCropTransformation())
                 }
 
@@ -135,7 +151,7 @@ class MatchesListAdapter(
             if (match.league.imageUrl != null) {
                 leagueLogo.load(match.league.imageUrl)
             } else {
-                leagueLogo.load(R.drawable.withoutphoto) {
+                leagueLogo.load(R.drawable.without_photo) {
                     transformations(CircleCropTransformation())
                 }
             }
