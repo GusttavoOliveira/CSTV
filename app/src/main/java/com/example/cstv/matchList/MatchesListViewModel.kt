@@ -2,6 +2,7 @@ package com.example.cstv.matchList
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.FragmentNavigator
 import com.example.cstv.entities.MatchItem
 import com.example.cstv.service.listeners.APIListeners
 import com.example.cstv.service.RetrofitClient
@@ -35,4 +36,5 @@ class MatchesListViewModel : ViewModel() {
 
 
     }
+
 }

@@ -10,16 +10,34 @@ import coil.transform.CircleCropTransformation
 import com.example.cstv.R
 import com.example.cstv.databinding.MatchCardItemBinding
 import com.example.cstv.entities.MatchItem
+import com.example.cstv.util.FormattedDate
 
 class MatchesListAdapter(
     private val context: Context,
-    val listMatches: MutableList<MatchItem>
+    val listMatches: MutableList<MatchItem>,
+    val onCardClicked: (imageTeam1: String?,
+                    imageTeam2: String?,
+                    nameTeam1: String?,
+                    nameTeam2: String?,
+                    date:String,
+                    leagueSerie: String) -> Unit
 ) : RecyclerView.Adapter<MatchesListAdapter.CardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
 
-        val layout = LayoutInflater.from(parent.context).inflate(R.layout.match_card_item, parent, false)
-        val card = CardViewHolder(layout)
+        val layout =
+            LayoutInflater.from(parent.context).inflate(R.layout.match_card_item, parent, false)
+        val card = CardViewHolder(layout
+        ) { imageTeam1, imageTeam2, nameTeam1, nameTeam2, date, leagueSerie ->
+            onCardClicked(
+                imageTeam1,
+                imageTeam2,
+                nameTeam1,
+                nameTeam2,
+                date,
+                leagueSerie
+            )
+        }
 
         return card
     }
@@ -32,34 +50,87 @@ class MatchesListAdapter(
         return listMatches.size
     }
 
-    inner class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class CardViewHolder(
+        itemView: View,
+        onCardClicked: (imageTeam1: String?,
+                        imageTeam2: String?,
+                        nameTeam1: String?,
+                        nameTeam2: String?,
+                        date:String,
+                        leagueSerie: String) -> Unit) :
+        RecyclerView.ViewHolder(itemView) {
         private val binding = MatchCardItemBinding.bind(itemView)
+        private var imageUrlTeam1: String? = null
+        private var imageUrlTeam2: String? = null
+        private var stringNameTeam1: String? = null
+        private var stringNameTeam2: String? = null
+        private lateinit var nameDate: String
+        private lateinit var leagueSerie: String
         private val imageTeam1 = binding.imageTeam1
         private val imageTeam2 = binding.imageTeam2
         private val nameTeam1 = binding.nameTeam1
         private val nameTeam2 = binding.nameTeam2
         private val leagueName = binding.leagueName
         private val leagueLogo = binding.leagueLogo
+        private val dateContainer = binding.containerDate
         private val date = binding.date
+        private val cardContainer = binding.containerCard
+
+        init {
+            cardContainer.setOnClickListener {
+                onCardClicked(imageUrlTeam1, imageUrlTeam2, stringNameTeam1, stringNameTeam2, nameDate, leagueSerie)
+            }
+        }
 
 
         fun bind(match: MatchItem) {
 
-//            if (match.opponents[0]?.opponent?.imageUrl != null) {
-//                imageTeam1.load(match.opponents[0]?.opponent?.imageUrl)
-//            } else {
+            nameDate = FormattedDate(match.begin_at).dateInformation()
+            leagueSerie = "${match.league.leagueName} ${match.serie.serieName}"
+
+            if (match.opponents.isNotEmpty()) {
+                imageUrlTeam1 = match.opponents[0].opponent.imageUrl
+                imageUrlTeam2 = match.opponents[1].opponent.imageUrl
+                stringNameTeam1 = match.opponents[0].opponent?.teamName
+                stringNameTeam2 = match.opponents[1].opponent?.teamName
+
+
+                if (imageUrlTeam1 != null) {
+                    imageTeam1.load(imageUrlTeam1)
+                } else {
+                    imageTeam1.load(R.drawable.withoutphoto) {
+                        transformations(CircleCropTransformation())
+                    }
+                }
+
+                if (imageUrlTeam2 != null) {
+                    imageTeam2.load(imageUrlTeam2)
+                } else {
+                    imageTeam2.load(R.drawable.withoutphoto) {
+                        transformations(CircleCropTransformation())
+                    }
+                }
+
+                nameTeam1.text = stringNameTeam1
+                nameTeam2.text = stringNameTeam2
+            } else {
+
+                imageUrlTeam1 = null
+                imageUrlTeam2 = null
+                stringNameTeam1 = null
+                stringNameTeam2 = null
+
                 imageTeam1.load(R.drawable.withoutphoto) {
                     transformations(CircleCropTransformation())
                 }
-//            }
 
-//            if (match.opponents[1]?.opponent?.imageUrl != null) {
-//                imageTeam2.load(match.opponents[1]?.opponent?.imageUrl)
-//            } else {
                 imageTeam2.load(R.drawable.withoutphoto) {
                     transformations(CircleCropTransformation())
                 }
-//            }
+
+                nameTeam1.text = context.getString(R.string.unknown)
+                nameTeam2.text = context.getString(R.string.unknown)
+            }
 
             if (match.league.imageUrl != null) {
                 leagueLogo.load(match.league.imageUrl)
@@ -69,10 +140,15 @@ class MatchesListAdapter(
                 }
             }
 
-//            nameTeam1.text = match.opponents[0]?.opponent?.teamName
-//            nameTeam2.text = match.opponents[1]?.opponent?.teamName
-            leagueName.text = ("${match.league.leagueName} ${match.serie.serieName}")
-            date.text = match.begin_at
+
+            leagueName.text = leagueSerie
+            date.text = nameDate
+            if (date.text == "AGORA") {
+                dateContainer.setBackgroundResource(R.drawable.date_background_live)
+            } else {
+                dateContainer.setBackgroundResource(R.drawable.date_background)
+            }
+
         }
     }
 }

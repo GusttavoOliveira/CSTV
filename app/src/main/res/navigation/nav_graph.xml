@@ -11,10 +11,12 @@
         android:label="MatchDetailsFragment" >
         <argument
             android:name="team_name_1"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
         <argument
             android:name="team_name_2"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
         <argument
             android:name="game_date"
             app:argType="string" />
@@ -23,10 +25,12 @@
             app:argType="string" />
         <argument
             android:name="team_image_1"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
         <argument
             android:name="team_image_2"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/matchesListFragment"

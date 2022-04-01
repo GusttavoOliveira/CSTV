@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cstv.databinding.FragmentMatchesListBinding
 
@@ -31,10 +32,30 @@ class MatchesListFragment : Fragment() {
         recyclerView = binding.cardsRecycler
 
         viewModel.matchesList.observe(viewLifecycleOwner, Observer {
-            recyclerView.adapter = MatchesListAdapter(requireContext(), it)
+            recyclerView.adapter = MatchesListAdapter(requireContext(), it, ::onCardClicked)
         })
 
+    }
 
+    fun onCardClicked(
+        imageTeam1: String?,
+        imageTeam2: String?,
+        nameTeam1: String?,
+        nameTeam2: String?,
+        date: String,
+        leagueSerie: String
+    ) {
+
+        val action = MatchesListFragmentDirections.actionMatchesListFragmentToMatchDetailsFragment(
+            nameTeam1,
+            nameTeam2,
+            date,
+            leagueSerie,
+            imageTeam1,
+            imageTeam2
+        )
+
+        findNavController().navigate(action)
 
     }
 
