@@ -2,9 +2,8 @@ package com.example.cstv.matchList
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.fragment.FragmentNavigator
 import com.example.cstv.entities.MatchItem
-import com.example.cstv.service.listeners.APIListeners
+import com.example.cstv.service.listeners.MatchesListeners
 import com.example.cstv.service.RetrofitClient
 import com.example.cstv.service.repository.RepositoryMatches
 
@@ -12,7 +11,7 @@ class MatchesListViewModel : ViewModel() {
 
     private val mRepositoryMatches = RepositoryMatches()
 
-    private var mMatchesList = MutableLiveData<MutableList<MatchItem>>()
+    private var mMatchesList = MutableLiveData<List<MatchItem>>()
     var matchesList = mMatchesList
 
     private lateinit var errorMessage: String
@@ -21,11 +20,11 @@ class MatchesListViewModel : ViewModel() {
 
         mRepositoryMatches.listMatches(RetrofitClient.TOKEN,
             1,
-            30,
-            object : APIListeners {
+            60,
+            object : MatchesListeners {
 
             override fun onSucces(entity: MutableList<MatchItem>) {
-                matchesList.value = entity
+                matchesList.value = entity.filter { it.opponents.isNotEmpty()}
             }
 
             override fun onFailure(message: String) {

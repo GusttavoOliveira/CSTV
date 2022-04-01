@@ -14,7 +14,7 @@ import com.example.cstv.util.FormattedDate
 
 class MatchesListAdapter(
     private val context: Context,
-    val listMatches: MutableList<MatchItem>,
+    val listMatches: List<MatchItem>,
     val onCardClicked: (imageTeam1: String?,
                     imageTeam2: String?,
                     nameTeam1: String?,
@@ -128,8 +128,8 @@ class MatchesListAdapter(
                     transformations(CircleCropTransformation())
                 }
 
-                nameTeam1.text = context.getString(R.string.unknown)
-                nameTeam2.text = context.getString(R.string.unknown)
+                nameTeam1.text = context.getString(R.string.desconhecido)
+                nameTeam2.text = context.getString(R.string.desconhecido)
             }
 
             if (match.league.imageUrl != null) {

@@ -1,7 +1,7 @@
 package com.example.cstv.service.repository
 
 import com.example.cstv.entities.MatchItem
-import com.example.cstv.service.listeners.APIListeners
+import com.example.cstv.service.listeners.MatchesListeners
 import com.example.cstv.service.RetrofitClient
 import com.example.cstv.service.requests.RequestMatches
 import retrofit2.Call
@@ -12,7 +12,7 @@ class RepositoryMatches {
 
     private val mRemote = RetrofitClient.createService(RequestMatches::class.java)
 
-    fun listMatches(token: String, page: Int, numberCards: Int, apiListeners: APIListeners) {
+    fun listMatches(token: String, page: Int, numberCards: Int, apiListeners: MatchesListeners) {
         val call: Call<MutableList<MatchItem>> = mRemote.listMatches(token, page, numberCards)
 
 
