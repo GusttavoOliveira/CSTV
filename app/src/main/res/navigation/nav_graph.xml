@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/matchDetailsFragment"
+        android:name="com.example.cstv.matchDetails.MatchDetailsFragment"
+        android:label="MatchDetailsFragment" >
+        <argument
+            android:name="team_name_1"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="team_name_2"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="game_date"
+            app:argType="string" />
+        <argument
+            android:name="league_serie"
+            app:argType="string" />
+        <argument
+            android:name="team_image_1"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="team_image_2"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesListFragment"
+        android:name="com.example.cstv.matchList.MatchesListFragment"
+        android:label="fragment_matches_list"
+        tools:layout="@layout/fragment_matches_list" >
+        <action
+            android:id="@+id/action_matchesListFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.cstv.SplashScreenFragment"
+        android:label="SplashScreenFragment" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_matchesListFragment"
+            app:destination="@id/matchesListFragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>

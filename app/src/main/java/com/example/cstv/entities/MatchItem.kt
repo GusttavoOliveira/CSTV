@@ -1,0 +1,32 @@
+package com.example.cstv.entities
+
+data class MatchItem(
+    val begin_at: String,
+    val detailed_stats: Boolean,
+    val end_at: Any,
+    val games: List<Game>,
+    val id: Int,
+    val league: League,
+    val league_id: Int,
+    val live: Live,
+    val live_embed_url: String,
+    val match_type: String,
+    val name: String,
+    val number_of_games: Int,
+    val official_stream_url: String,
+    val opponents: List<Opponent?>,
+    val original_scheduled_at: String,
+    val rescheduled: Boolean,
+    val results: List<Any>,
+    val scheduled_at: String,
+    val serie: Serie,
+    val serie_id: Int,
+    val slug: String,
+    val status: String,
+    val streams: Streams,
+    val tournament_id: Int,
+    val videogame: Videogame,
+    val videogame_version: Any,
+    val winner: Any,
+    val winner_id: Any
+)
