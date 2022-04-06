@@ -4,8 +4,10 @@ import com.example.cstv.entities.MatchItem
 
 interface MatchesListeners {
 
-    fun onSucces(entity: MutableList<MatchItem>)
+     fun onSuccesRunning(entityRunning: MutableList<MatchItem>)
 
-    fun onFailure(message: String)
+     fun onSuccesUpcoming(entityUpcoming: MutableList<MatchItem>)
+
+     fun onFailure(message: String)
 
 }

@@ -9,6 +9,7 @@ data class MatchItem(
     val league: League,
     val league_id: Int,
     val live: Live,
+    var is_live: Boolean? = null,
     val live_embed_url: String,
     val match_type: String,
     val name: String,

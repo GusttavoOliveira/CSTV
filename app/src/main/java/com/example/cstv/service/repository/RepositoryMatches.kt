@@ -13,17 +13,33 @@ class RepositoryMatches {
     private val mRemote = RetrofitClient.createService(RequestMatches::class.java)
 
     fun listMatches(token: String, page: Int, numberCards: Int, apiListeners: MatchesListeners) {
-        val call: Call<MutableList<MatchItem>> = mRemote.listMatches(token, page, numberCards)
 
+        val callRunning: Call<MutableList<MatchItem>> =
+            mRemote.listRunningMatches(token, page, numberCards)
 
-        //Chamada assíncrona
-        call.enqueue(object : Callback<MutableList<MatchItem>> {
+        val callUpcoming: Call<MutableList<MatchItem>> =
+            mRemote.listUpcomingMatches(token, page, numberCards)
+
+        lateinit var runningList: MutableList<MatchItem>
+        lateinit var upcomingList: MutableList<MatchItem>
+
+        //Chamada assíncrona running matches
+        callRunning.enqueue(object : Callback<MutableList<MatchItem>> {
 
             override fun onResponse(
                 call: Call<MutableList<MatchItem>>,
                 response: Response<MutableList<MatchItem>>
             ) {
-                response.body()?.let { apiListeners.onSucces(it) }
+                response.body()?.let {
+
+                    it.forEach { running ->
+                        running.is_live = true
+                    }
+
+                    runningList = it
+                    apiListeners.onSuccesRunning(runningList)
+                }
+
             }
 
             override fun onFailure(call: Call<MutableList<MatchItem>>, t: Throwable) {
@@ -31,5 +47,33 @@ class RepositoryMatches {
             }
 
         })
+
+
+        //Chamada assíncrona running matches
+        callUpcoming.enqueue(object : Callback<MutableList<MatchItem>> {
+
+            override fun onResponse(
+                call: Call<MutableList<MatchItem>>,
+                response: Response<MutableList<MatchItem>>
+            ) {
+                response.body()?.let {
+
+                    it.forEach { upcoming ->
+                        upcoming.is_live = false
+                    }
+
+                    upcomingList = it
+                    apiListeners.onSuccesUpcoming(upcomingList)
+                }
+
+
+            }
+
+            override fun onFailure(call: Call<MutableList<MatchItem>>, t: Throwable) {
+                apiListeners.onFailure(t.message.toString())
+            }
+
+        })
+
     }
 }

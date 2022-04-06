@@ -1,5 +1,6 @@
 package com.example.cstv.matchList
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cstv.entities.MatchItem
@@ -23,15 +24,25 @@ class MatchesListViewModel : ViewModel() {
             60,
             object : MatchesListeners {
 
-            override fun onSucces(entity: MutableList<MatchItem>) {
-                matchesList.value = entity.filter { it.opponents.isNotEmpty()}
-            }
+                override fun onSuccesRunning(entityRunning: MutableList<MatchItem>) {
+                    Log.d("OnSuccesRunning", "$entityRunning")
 
-            override fun onFailure(message: String) {
-                errorMessage = message
-            }
+                    matchesList.value =
+                        matchesList.value?.plus(entityRunning.filter { it.opponents.isNotEmpty() })
+                }
 
-        })
+                override fun onSuccesUpcoming(entityUpcoming: MutableList<MatchItem>) {
+                    Log.d("OnSuccesUpcoming", "$entityUpcoming")
+
+                    matchesList.value =
+                        matchesList.value?.plus(entityUpcoming.filter { it.opponents.isNotEmpty() })
+                }
+
+                override fun onFailure(message: String) {
+                    errorMessage = message
+                }
+
+            })
 
 
     }

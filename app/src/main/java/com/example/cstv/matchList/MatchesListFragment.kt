@@ -37,7 +37,7 @@ class MatchesListFragment : Fragment() {
 
     }
 
-    fun onCardClicked(
+    private fun onCardClicked(
         imageTeam1: String?,
         imageTeam2: String?,
         nameTeam1: String?,

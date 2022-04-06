@@ -15,7 +15,7 @@ import com.example.cstv.util.FormattedDate
 
 class MatchesListAdapter(
     private val context: Context,
-    val listMatches: List<MatchItem>,
+    private val listMatches: List<MatchItem>,
     val onCardClicked: (imageTeam1: String?,
                     imageTeam2: String?,
                     nameTeam1: String?,
