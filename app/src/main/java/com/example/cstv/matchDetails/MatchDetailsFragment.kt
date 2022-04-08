@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +14,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.cstv.R
 import com.example.cstv.databinding.FragmentMatchDetailsBinding
+import com.example.cstv.entities.ApiState
 
 class MatchDetailsFragment : Fragment() {
 
@@ -67,7 +70,39 @@ class MatchDetailsFragment : Fragment() {
 
         onBackArrowClicked()
         onBindHeader()
-        onBindPlayers()
+        onBindingFlipper()
+
+
+    }
+
+    private fun onBindingFlipper() {
+        viewModel.apiState.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is ApiState.Loading ->
+                    binding.run {
+                        viewFlipper.displayedChild = 1
+                        progressBar.isVisible = true
+                        containerDetails.isVisible = false
+                    }
+
+                is ApiState.Succes ->
+                    binding.run {
+                        viewFlipper.displayedChild = 1
+                        progressBar.isVisible = false
+                        containerDetails.isVisible = true
+                        onBindPlayers()
+                    }
+
+                is ApiState.Failed ->
+                    binding.run {
+                        viewFlipper.displayedChild = 1
+                        progressBar.isVisible = true
+                        Toast.makeText(requireContext(), "Falha na requisição", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+            }
+        })
     }
 
     private fun onBindHeader(){

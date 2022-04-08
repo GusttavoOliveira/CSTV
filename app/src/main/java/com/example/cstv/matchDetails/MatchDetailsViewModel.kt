@@ -1,9 +1,11 @@
 package com.example.cstv.matchDetails
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.cstv.entities.ApiState
 import com.example.cstv.entities.TeamsItem
 import com.example.cstv.service.RetrofitClient
 import com.example.cstv.service.listeners.TeamsListeners
@@ -14,6 +16,10 @@ class MatchDetailsViewModel : ViewModel() {
 
     private val mRepositoryTeams = RepositoryTeams()
 
+    private val _getApiState = MutableLiveData<ApiState>(ApiState.Initial)
+    val apiState: LiveData<ApiState>
+        get() = _getApiState
+
     private var mTeam1 = MutableLiveData<TeamsItem>()
     var team1 = mTeam1
 
@@ -23,6 +29,10 @@ class MatchDetailsViewModel : ViewModel() {
     private lateinit var teams: List<TeamsItem>
     private lateinit var errorMessage: String
 
+    init {
+        getApiState()
+    }
+
 
     fun listTeams(teamNames: String) {
 
@@ -31,8 +41,17 @@ class MatchDetailsViewModel : ViewModel() {
                 RetrofitClient.TOKEN,
                 teamNames
             )!!
+
+            mTeam1.value = teams[0]
+            mTeam2.value = teams[1]
         }
+    }
 
-
+    private fun getApiState() {
+        viewModelScope.launch {
+            mRepositoryTeams.listApiState.collect {
+                _getApiState.postValue(it)
+            }
+        }
     }
 }
