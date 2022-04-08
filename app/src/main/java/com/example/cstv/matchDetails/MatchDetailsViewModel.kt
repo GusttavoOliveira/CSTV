@@ -42,8 +42,18 @@ class MatchDetailsViewModel : ViewModel() {
                 teamNames
             )!!
 
-            mTeam1.value = teams[0]
-            mTeam2.value = teams[1]
+            if (teams.size == 2) {
+                mTeam1.value = teams[0]
+                mTeam2.value = teams[1]
+
+            } else if (teams.size == 1) {
+                mTeam1.value = teams[0]
+                mTeam2.value = null
+
+            } else if (teams.size == 0) {
+                mTeam1.value = null
+                mTeam2.value = null
+            }
         }
     }
 
