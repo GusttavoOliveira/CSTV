@@ -95,16 +95,21 @@ class RepositoryMatches {
         numberCards: Int,
         ): List<MatchItem>? = withContext(Dispatchers.Default){
             try {
-                Log.d("requisicao", "getListMatches: ENTREI NO TRY")
+
                 mutableListApiState.value = ApiState.Loading
 
-                val runningResponse = mRemote.listRunningMatches(token, page, numberCards)
+                var runningResponse = mRemote.listRunningMatches(token, page, numberCards)
                 Log.d("requisicao", "getListMatches: FIZ REQUISIÇÃO 1")
-                val upcomingResponse = mRemote.listUpcomingMatches(token, page, numberCards)
+                var upcomingResponse = mRemote.listUpcomingMatches(token, page, numberCards)
                 Log.d("requisicao", "getListMatches: FIZ REQUISIÇÃO 2")
 
+                runningResponse.forEach { it.is_live = true }
+                runningResponse = runningResponse.filter { it.opponents.isNotEmpty() } as MutableList<MatchItem>
+                upcomingResponse.forEach { it.is_live = false }
+                upcomingResponse = upcomingResponse.filter { it.opponents.isNotEmpty() } as MutableList<MatchItem>
+                
                 mutableListApiState.value = ApiState.Succes
-                Log.d("requisicao", "getListMatches: SUCESSO")
+
 
                 runningResponse + upcomingResponse
             }catch (e: Exception){
