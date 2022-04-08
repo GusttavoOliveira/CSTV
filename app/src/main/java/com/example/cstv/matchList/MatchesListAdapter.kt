@@ -158,11 +158,12 @@ class MatchesListAdapter(
 
 
             leagueName.text = leagueSerie
-            date.text = nameDate
-            if (date.text == "AGORA") {
+            if (match.is_live == true) {
                 dateContainer.setBackgroundResource(R.drawable.date_background_live)
+                date.text = "AGORA"
             } else {
                 dateContainer.setBackgroundResource(R.drawable.date_background)
+                date.text = nameDate
             }
 
         }
