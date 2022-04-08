@@ -3,18 +3,12 @@ package com.example.cstv.service.repository
 import android.util.Log
 import com.example.cstv.entities.ApiState
 import com.example.cstv.entities.MatchItem
-import com.example.cstv.service.listeners.MatchesListeners
 import com.example.cstv.service.RetrofitClient
 import com.example.cstv.service.requests.RequestMatches
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.awaitResponse
-import java.security.spec.ECField
 
 class RepositoryMatches {
 

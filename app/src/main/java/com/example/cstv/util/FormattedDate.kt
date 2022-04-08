@@ -27,26 +27,32 @@ class FormattedDate(date: String) {
 
     fun dateInformation() : String{
         c.time = current
+        val hourInt = hour.toInt() - 3 //Fuso horário
         val dayOfMonth = c.get(Calendar.DAY_OF_MONTH)
         Log.d("dateInformation", "dateInformation: ${current.time}")
         formattedDate = translate()
 
         if(day.toInt() <= dayOfMonth){
-            return "Hoje, $hour:$minutes"
+            return "Hoje, $hourInt:$minutes"
         }else {
             return "${formattedDate}, $hour:$minutes"
         }
     }
 
     private fun translate(): String{
+
+        /**
+         * Através de testes constatei empiricamente alteração no nome dos dias
+         * da semana quando usada a classe Date() passando atributos no construtor
+        **/
         return when(formattedDate){
-            "Monday" -> "Seg"
-            "Tuesday" -> "Ter"
-            "Wednesday" -> "Qua"
-            "Thursday" -> "Qui"
-            "Friday" -> "Sex"
-            "Saturday" -> "Sáb"
-            else -> "Dom"
+            "Monday" -> "Sex"
+            "Tuesday" -> "Sáb"
+            "Wednesday" -> "Dom"
+            "Thursday" -> "Seg"
+            "Friday" -> "Ter"
+            "Saturday" -> "Qua"
+            else -> "Qui"
         }
     }
 }

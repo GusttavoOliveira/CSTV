@@ -91,7 +91,7 @@ class MatchesListAdapter(
 
             if (match.opponents.isNotEmpty()) {
 
-                if (match.opponents[0]?.opponent?.imageUrl != null) {
+                if (match.opponents[0]?.opponent?.imageUrl != null && match.opponents[0]?.opponent?.imageUrl != "") {
                     imageTeam1.load(match.opponents[0]?.opponent?.imageUrl)
                     imageUrlTeam1 = match.opponents[0]?.opponent?.imageUrl
                 } else {
@@ -101,7 +101,7 @@ class MatchesListAdapter(
                 }
                 Log.d("MatchesListAdapter", "bind: ${match.opponents.size}")
                 if(match.opponents.size == 2) {
-                    if (match.opponents[1]?.opponent?.imageUrl != null) {
+                    if (match.opponents[1]?.opponent?.imageUrl != null && match.opponents[1]?.opponent?.imageUrl != "") {
                         imageTeam2.load(match.opponents[1]?.opponent?.imageUrl)
                         imageUrlTeam2 = match.opponents[1]?.opponent?.imageUrl
                     }

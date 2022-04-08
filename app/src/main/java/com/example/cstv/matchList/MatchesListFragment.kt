@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cstv.databinding.FragmentMatchesListBinding
 import com.example.cstv.entities.ApiState
+import com.example.cstv.service.repository.RepositoryMatches
 
 class MatchesListFragment : Fragment() {
     private lateinit var binding: FragmentMatchesListBinding
@@ -32,7 +33,12 @@ class MatchesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(MatchesListViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this,
+            MatchesListViewModelFactory(RepositoryMatches())
+        ).get(
+            MatchesListViewModel::class.java
+        )
         onBindingFlipper()
 
 
