@@ -10,16 +10,16 @@ import retrofit2.http.Query
 interface RequestMatches {
 
     @GET("csgo/matches/running")
-    fun listRunningMatches(
+    suspend fun listRunningMatches(
         @Header("Authorization") token: String,
         @Query("page") page: Int,
         @Query("per_page") numberCards: Int
-    ): Call<MutableList<MatchItem>>
+    ): MutableList<MatchItem>
 
-    @GET("csgo/matches/running/upcoming")
-    fun listUpcomingMatches(
+    @GET("csgo/matches/upcoming")
+    suspend fun listUpcomingMatches(
         @Header("Authorization") token: String,
         @Query("page") page: Int,
         @Query("per_page") numberCards: Int
-    ): Call<MutableList<MatchItem>>
+    ): MutableList<MatchItem>
 }

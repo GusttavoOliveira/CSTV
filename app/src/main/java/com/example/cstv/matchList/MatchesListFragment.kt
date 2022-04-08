@@ -1,15 +1,20 @@
 package com.example.cstv.matchList
 
+import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cstv.databinding.FragmentMatchesListBinding
+import com.example.cstv.entities.ApiState
 
 class MatchesListFragment : Fragment() {
     private lateinit var binding: FragmentMatchesListBinding
@@ -28,12 +33,8 @@ class MatchesListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(MatchesListViewModel::class.java)
-        viewModel.listMatches()
-        recyclerView = binding.cardsRecycler
+        onBindingFlipper()
 
-        viewModel.matchesList.observe(viewLifecycleOwner, Observer {
-            recyclerView.adapter = MatchesListAdapter(requireContext(), it, ::onCardClicked)
-        })
 
     }
 
@@ -57,6 +58,45 @@ class MatchesListFragment : Fragment() {
 
         findNavController().navigate(action)
 
+    }
+
+    private fun setupAdapter() {
+
+        recyclerView = binding.cardsRecycler
+
+        viewModel.matchesList.observe(viewLifecycleOwner, Observer {
+            recyclerView.adapter = MatchesListAdapter(requireContext(), it, ::onCardClicked)
+        })
+    }
+
+    private fun onBindingFlipper() {
+        viewModel.apiState.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is ApiState.Loading ->
+                    binding.run {
+                        viewFlipper.displayedChild = 1
+                        progressBar.isVisible = true
+                        cardsRecycler.isVisible = false
+                    }
+
+                is ApiState.Succes ->
+                    binding.run {
+                        viewFlipper.displayedChild = 1
+                        progressBar.isVisible = false
+                        cardsRecycler.isVisible = true
+                        setupAdapter()
+                    }
+
+                is ApiState.Failed ->
+                    binding.run {
+                        viewFlipper.displayedChild = 1
+                        progressBar.isVisible = true
+                        Toast.makeText(requireContext(), "Falha na requisição", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+            }
+        })
     }
 
 }
