@@ -12,7 +12,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginTop">10dp</item>
-        <item name="android:fontFamily">@font/roboto"</item>
+        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
@@ -23,7 +23,7 @@
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:layout_marginEnd">16dp</item>
         <item name="android:layout_marginBottom">30dp</item>
-        <item name="android:fontFamily">@font/roboto"</item>
+        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -35,7 +35,7 @@
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginBottom">30dp</item>
-        <item name="android:fontFamily">@font/roboto"</item>
+        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -46,7 +46,7 @@
         <item name="android:maxLines">2</item>
         <item name="android:gravity">start</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/roboto"</item>
+        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/player_name</item>
         <item name="android:textStyle">normal</item>
     </style>
