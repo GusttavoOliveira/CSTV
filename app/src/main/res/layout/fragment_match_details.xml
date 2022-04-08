@@ -182,6 +182,7 @@
             android:layout_width="174dp"
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
+            android:padding="-10dp"
             android:background="@drawable/player_left_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_player_1">
@@ -429,7 +430,7 @@
             android:id="@+id/container_player_6"
             android:layout_width="174dp"
             android:layout_height="54dp"
-            android:background="@drawable/player_left_background"
+            android:background="@drawable/player_right_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -489,7 +490,7 @@
             android:layout_width="174dp"
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/player_left_background"
+            android:background="@drawable/player_right_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_player_6">
 
@@ -606,7 +607,7 @@
             android:layout_width="174dp"
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/player_left_background"
+            android:background="@drawable/player_right_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_player_8">
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -664,7 +665,7 @@
             android:layout_width="174dp"
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/player_left_background"
+            android:background="@drawable/player_right_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_player_9">
 

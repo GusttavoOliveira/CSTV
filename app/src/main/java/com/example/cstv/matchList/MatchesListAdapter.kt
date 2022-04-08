@@ -15,7 +15,7 @@ import com.example.cstv.util.FormattedDate
 
 class MatchesListAdapter(
     private val context: Context,
-    val listMatches: List<MatchItem>,
+    private val listMatches: List<MatchItem>,
     val onCardClicked: (imageTeam1: String?,
                     imageTeam2: String?,
                     nameTeam1: String?,
@@ -158,11 +158,12 @@ class MatchesListAdapter(
 
 
             leagueName.text = leagueSerie
-            date.text = nameDate
-            if (date.text == "AGORA") {
+            if (match.is_live == true) {
                 dateContainer.setBackgroundResource(R.drawable.date_background_live)
+                date.text = "AGORA"
             } else {
                 dateContainer.setBackgroundResource(R.drawable.date_background)
+                date.text = nameDate
             }
 
         }

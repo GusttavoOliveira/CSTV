@@ -12,9 +12,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_date"
-        android:background="@drawable/date_background_live"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/date_background_live"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:padding="8dp"
+            android:padding="10dp"
             android:text="AGORA"
             android:textColor="@color/white"
             android:textSize="8sp"
@@ -52,6 +52,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@color/purple_500" />
 
@@ -61,9 +62,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
-            android:text="Black Belt"
+            android:gravity="center"
+            android:text="Desconhecido"
             android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +87,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@color/purple_500" />
 
@@ -94,9 +97,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
-            android:text="Black Belt"
+            android:gravity="center"
+            android:text="Desconhecido"
             android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -155,8 +159,8 @@
         android:id="@+id/versus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white_50"
         android:text="VS"
+        android:textColor="@color/white_50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/container_team_2"
         app:layout_constraintStart_toEndOf="@+id/container_team_1"
