@@ -49,12 +49,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_header">
 
-                <ProgressBar
-                    android:id="@+id/progress_bar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:progressTint="@color/red" />
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progress_bar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:progressTint="@color/red" />-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_details"
@@ -82,12 +82,8 @@
 
                 <TextView
                     android:id="@+id/name_team_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto"
+                    style="@style/Base.CSTV.TeamNameApearence"
                     android:text="Black Belt"
-                    android:textColor="@color/white"
                     android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -115,12 +111,8 @@
 
                 <TextView
                     android:id="@+id/name_team_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto"
+                    style="@style/Base.CSTV.TeamNameApearence"
                     android:text="Black Belt"
-                    android:textColor="@color/white"
                     android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -155,15 +147,8 @@
 
                 <TextView
                     android:id="@+id/nickname_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="30dp"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
+                    style="@style/Base.CSTV.NickAppearance"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/photo_1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -171,15 +156,8 @@
 
                 <TextView
                     android:id="@+id/player_name_1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="end"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/nickname_1"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -214,15 +192,8 @@
 
                 <TextView
                     android:id="@+id/nickname_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.NickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/photo_2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -230,15 +201,8 @@
 
                 <TextView
                     android:id="@+id/player_name_2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="end"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/nickname_2"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -272,15 +236,8 @@
 
                 <TextView
                     android:id="@+id/nickname_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.NickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/photo_3"
                     app:layout_constraintStart_toStartOf="parent"
@@ -288,15 +245,8 @@
 
                 <TextView
                     android:id="@+id/player_name_3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="end"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/nickname_3"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -331,15 +281,8 @@
 
                 <TextView
                     android:id="@+id/nickname_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.NickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/photo_4"
                     app:layout_constraintStart_toStartOf="parent"
@@ -347,15 +290,8 @@
 
                 <TextView
                     android:id="@+id/player_name_4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="end"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/nickname_4"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -390,15 +326,8 @@
 
                 <TextView
                     android:id="@+id/nickname_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.NickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/photo_5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -406,15 +335,8 @@
 
                 <TextView
                     android:id="@+id/player_name_5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="end"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/nickname_5"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -450,15 +372,8 @@
 
                 <TextView
                     android:id="@+id/nickname_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.RightNickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/photo_6"
@@ -466,15 +381,8 @@
 
                 <TextView
                     android:id="@+id/player_name_6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="start"
-                    android:maxLines="2"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -511,15 +419,8 @@
 
                 <TextView
                     android:id="@+id/nickname_7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.RightNickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/photo_7"
@@ -527,15 +428,8 @@
 
                 <TextView
                     android:id="@+id/player_name_7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="start"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -571,15 +465,8 @@
 
                 <TextView
                     android:id="@+id/nickname_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.RightNickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/photo_8"
@@ -587,15 +474,8 @@
 
                 <TextView
                     android:id="@+id/player_name_8"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="start"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -632,15 +512,8 @@
 
                 <TextView
                     android:id="@+id/nickname_9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.RightNickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/photo_9"
@@ -648,15 +521,8 @@
 
                 <TextView
                     android:id="@+id/player_name_9"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="start"
-                    android:maxLines="2"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -693,15 +559,8 @@
 
                 <TextView
                     android:id="@+id/nickname_10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="30dp"
+                    style="@style/Base.CSTV.RightNickAppearance"
                     android:text="NickName"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/photo_10"
@@ -709,15 +568,8 @@
 
                 <TextView
                     android:id="@+id/player_name_10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="start"
-                    android:maxLines="2"
                     android:text="Nome Jogador"
-                    android:textColor="@color/player_name"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
+                    style="@style/Base.CSTV.PlayerNameAppearance"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
