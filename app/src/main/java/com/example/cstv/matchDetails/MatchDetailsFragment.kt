@@ -111,7 +111,7 @@ class MatchDetailsFragment : Fragment() {
     }
 
     private fun onBindHeader() {
-        if (imageUrlTeam1 != null) {
+        if (!imageUrlTeam1.isNullOrBlank() && imageUrlTeam1 != "null") {
             binding.imageTeam1.load(imageUrlTeam1)
         } else {
             binding.imageTeam1.load(R.drawable.without_photo) {
@@ -119,7 +119,7 @@ class MatchDetailsFragment : Fragment() {
             }
         }
 
-        if (imageUrlTeam2 != null) {
+        if (!imageUrlTeam2.isNullOrBlank() && imageUrlTeam2 != "null") {
             binding.imageTeam2.load(imageUrlTeam2)
         } else {
             binding.imageTeam2.load(R.drawable.without_photo) {
