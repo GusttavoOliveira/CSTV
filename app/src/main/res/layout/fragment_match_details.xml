@@ -40,8 +40,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ViewFlipper
-        android:id="@+id/view_flipper"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,562 +48,572 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_header">
 
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:progressTint="@color/red" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/container_details"
+        <ViewFlipper
+            android:id="@+id/view_flipper"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_header">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_team_1"
+            <ProgressBar
+                android:id="@+id/progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_gravity="center"
+                android:progressTint="@color/red" />
 
-                <ImageView
-                    android:id="@+id/image_team_1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_team_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@color/purple_500" />
-
-                <TextView
-                    android:id="@+id/name_team_1"
-                    style="@style/Base.CSTV.TeamNameApearence"
-                    android:text="Black Belt"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image_team_1" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_team_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.75"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                    <ImageView
+                        android:id="@+id/image_team_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
 
-                <ImageView
-                    android:id="@+id/image_team_2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@color/purple_500" />
+
+                    <TextView
+                        android:id="@+id/name_team_1"
+                        style="@style/Base.CSTV.TeamNameApearence"
+                        android:text="Black Belt"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/image_team_1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_team_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@color/purple_500" />
-
-                <TextView
-                    android:id="@+id/name_team_2"
-                    style="@style/Base.CSTV.TeamNameApearence"
-                    android:text="Black Belt"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.75"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image_team_2" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_1"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/player_left_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/date_text" />
+                    <ImageView
+                        android:id="@+id/image_team_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@color/purple_500" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout5"
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+                    <TextView
+                        android:id="@+id/name_team_2"
+                        style="@style/Base.CSTV.TeamNameApearence"
+                        android:text="Black Belt"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/image_team_2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <ImageView
-                    android:id="@+id/photo_1"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_1"
-                    android:text="NickName"
-                    style="@style/Base.CSTV.NickAppearance"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/photo_1"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_1"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/player_left_background"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/date_text" />
 
-                <TextView
-                    android:id="@+id/player_name_1"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/nickname_1"
-                    app:layout_constraintHorizontal_bias="1.0"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout5"
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_1" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="@+id/constraintLayout">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_2"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_left_background"
-                android:padding="-10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_1" />
+                    <ImageView
+                        android:id="@+id/photo_1"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+                    <TextView
+                        android:id="@+id/nickname_1"
+                        style="@style/Base.CSTV.NickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/photo_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/photo_2"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/player_name_1"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/nickname_1"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/nickname_2"
-                    style="@style/Base.CSTV.NickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/photo_2"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_2"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_left_background"
+                    android:padding="-10dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/container_player_1" />
 
-                <TextView
-                    android:id="@+id/player_name_2"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/nickname_2"
-                    app:layout_constraintHorizontal_bias="1.0"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_2" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_3"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_left_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_2" />
+                    <ImageView
+                        android:id="@+id/photo_2"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout3">
+                    <TextView
+                        android:id="@+id/nickname_2"
+                        style="@style/Base.CSTV.NickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/photo_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/photo_3"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/player_name_2"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/nickname_2"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/nickname_3"
-                    style="@style/Base.CSTV.NickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/photo_3"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_3"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_left_background"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/container_player_2" />
 
-                <TextView
-                    android:id="@+id/player_name_3"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/nickname_3"
-                    app:layout_constraintHorizontal_bias="1.0"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_3" />
+                    app:layout_constraintTop_toTopOf="@+id/constraintLayout3">
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/photo_3"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_4"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_left_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_3" />
+                    <TextView
+                        android:id="@+id/nickname_3"
+                        style="@style/Base.CSTV.NickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/photo_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout4">
+                    <TextView
+                        android:id="@+id/player_name_3"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/nickname_3"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_3" />
 
-                <ImageView
-                    android:id="@+id/photo_4"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/nickname_4"
-                    style="@style/Base.CSTV.NickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/photo_4"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_4"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_left_background"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/container_player_3" />
 
-                <TextView
-                    android:id="@+id/player_name_4"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/nickname_4"
-                    app:layout_constraintHorizontal_bias="1.0"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_4" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="@+id/constraintLayout4">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_5"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_left_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_4" />
+                    <ImageView
+                        android:id="@+id/photo_4"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout6">
+                    <TextView
+                        android:id="@+id/nickname_4"
+                        style="@style/Base.CSTV.NickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/photo_4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/player_name_4"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/nickname_4"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <ImageView
-                    android:id="@+id/photo_5"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_5"
-                    style="@style/Base.CSTV.NickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/photo_5"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_5"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_left_background"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/container_player_4" />
 
-                <TextView
-                    android:id="@+id/player_name_5"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/nickname_5"
-                    app:layout_constraintHorizontal_bias="1.0"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_5" />
+                    app:layout_constraintTop_toTopOf="@+id/constraintLayout6">
+
+
+                    <ImageView
+                        android:id="@+id/photo_5"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nickname_5"
+                        style="@style/Base.CSTV.NickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/photo_5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/player_name_5"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/nickname_5"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_6"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/player_right_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_text" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_text">
+
+                    <ImageView
+                        android:id="@+id/photo_6"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nickname_6"
+                        style="@style/Base.CSTV.RightNickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/photo_6"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/player_name_6"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/nickname_6"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_7"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_right_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_player_6" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                    <ImageView
+                        android:id="@+id/photo_7"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nickname_7"
+                        style="@style/Base.CSTV.RightNickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/photo_7"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/player_name_7"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/nickname_7"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_7" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_8"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_left_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_player_7" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                    <ImageView
+                        android:id="@+id/photo_8"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nickname_8"
+                        style="@style/Base.CSTV.RightNickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/photo_8"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/player_name_8"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/nickname_8"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_9"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_right_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_player_8" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                    <ImageView
+                        android:id="@+id/photo_9"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nickname_9"
+                        style="@style/Base.CSTV.RightNickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/photo_9"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/player_name_9"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/nickname_9"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_9" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_player_10"
+                    android:layout_width="174dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/player_right_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_player_9" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout6"
+                    android:layout_width="154dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+
+                    <ImageView
+                        android:id="@+id/photo_10"
+                        android:layout_width="49dp"
+                        android:layout_height="49dp"
+                        android:src="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nickname_10"
+                        style="@style/Base.CSTV.RightNickAppearance"
+                        android:text="NickName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/photo_10"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/player_name_10"
+                        style="@style/Base.CSTV.PlayerNameAppearance"
+                        android:text="Nome Jogador"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/nickname_10"
+                        app:layout_constraintTop_toBottomOf="@+id/nickname_10" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/versus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VS"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintBottom_toBottomOf="@+id/container_team_2"
+                    app:layout_constraintEnd_toStartOf="@+id/container_team_2"
+                    app:layout_constraintStart_toEndOf="@+id/container_team_1"
+                    app:layout_constraintTop_toTopOf="@+id/container_team_2" />
+
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="54dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Hoje, 21:00"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/container_team_2"
+                    app:layout_constraintStart_toEndOf="@+id/container_team_1"
+                    app:layout_constraintTop_toBottomOf="@+id/versus" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_6"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/player_right_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_text" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_text">
-
-                <ImageView
-                    android:id="@+id/photo_6"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_6"
-                    style="@style/Base.CSTV.RightNickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/photo_6"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/player_name_6"
-                    android:text="Nome Jogador"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/nickname_6"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_6" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_7"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_right_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_6" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                <ImageView
-                    android:id="@+id/photo_7"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_7"
-                    style="@style/Base.CSTV.RightNickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/photo_7"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/player_name_7"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/nickname_7"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_7" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_8"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_left_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_7" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-
-                <ImageView
-                    android:id="@+id/photo_8"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_8"
-                    style="@style/Base.CSTV.RightNickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/photo_8"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/player_name_8"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/nickname_8"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_8" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_9"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_right_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_8" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout4"
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-
-                <ImageView
-                    android:id="@+id/photo_9"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_9"
-                    style="@style/Base.CSTV.RightNickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/photo_9"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/player_name_9"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    android:text="Nome Jogador"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/nickname_9"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_9" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_player_10"
-                android:layout_width="174dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/player_right_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/container_player_9" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout6"
-                android:layout_width="154dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
-
-
-                <ImageView
-                    android:id="@+id/photo_10"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:src="@color/light_gray"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/nickname_10"
-                    style="@style/Base.CSTV.RightNickAppearance"
-                    android:text="NickName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/photo_10"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/player_name_10"
-                    android:text="Nome Jogador"
-                    style="@style/Base.CSTV.PlayerNameAppearance"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/nickname_10"
-                    app:layout_constraintTop_toBottomOf="@+id/nickname_10" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <TextView
-                android:id="@+id/versus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="VS"
-                android:textColor="@color/white_50"
-                app:layout_constraintBottom_toBottomOf="@+id/container_team_2"
-                app:layout_constraintEnd_toStartOf="@+id/container_team_2"
-                app:layout_constraintStart_toEndOf="@+id/container_team_1"
-                app:layout_constraintTop_toTopOf="@+id/container_team_2" />
-
-            <TextView
-                android:id="@+id/date_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="54dp"
-                android:fontFamily="@font/roboto"
-                android:text="Hoje, 21:00"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/container_team_2"
-                app:layout_constraintStart_toEndOf="@+id/container_team_1"
-                app:layout_constraintTop_toBottomOf="@+id/versus" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ViewFlipper>
+        </ViewFlipper>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
