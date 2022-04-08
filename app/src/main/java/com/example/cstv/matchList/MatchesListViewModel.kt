@@ -14,9 +14,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
-class MatchesListViewModel : ViewModel() {
-
-    private val mRepositoryMatches = RepositoryMatches()
+class MatchesListViewModel( private val mRepositoryMatches: RepositoryMatches) : ViewModel() {
 
     private var mMatchesList = MutableLiveData<List<MatchItem>>()
     var matchesList = mMatchesList

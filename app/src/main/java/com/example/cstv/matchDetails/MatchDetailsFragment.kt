@@ -16,6 +16,7 @@ import coil.transform.RoundedCornersTransformation
 import com.example.cstv.R
 import com.example.cstv.databinding.FragmentMatchDetailsBinding
 import com.example.cstv.entities.ApiState
+import com.example.cstv.service.repository.RepositoryTeams
 
 class MatchDetailsFragment : Fragment() {
 
@@ -66,7 +67,10 @@ class MatchDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(MatchDetailsViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this,
+            MatchDetailsViewlModelFactory(RepositoryTeams())
+        ).get(MatchDetailsViewModel::class.java)
         viewModel.listTeams(teamNames)
 
         onBackArrowClicked()

@@ -12,9 +12,7 @@ import com.example.cstv.service.listeners.TeamsListeners
 import com.example.cstv.service.repository.RepositoryTeams
 import kotlinx.coroutines.launch
 
-class MatchDetailsViewModel : ViewModel() {
-
-    private val mRepositoryTeams = RepositoryTeams()
+class MatchDetailsViewModel(private val mRepositoryTeams: RepositoryTeams): ViewModel() {
 
     private val _getApiState = MutableLiveData<ApiState>(ApiState.Initial)
     val apiState: LiveData<ApiState>
