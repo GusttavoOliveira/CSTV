@@ -21,11 +21,6 @@ Para executar o projeto no seu Android Studio:
 3. Extraia a pasta em um caminho conhecido no seu computador.
 4. Ao abrir o Android Studio, clique em Import Project.
 5. Selecione a pasta que você extraiu e o Android Studio abrirá o projeto.
-6. Para rodar basta selecionar o emulador desejadoe clicar no botão verde de play na barra de ferramentas da IDE.
-
-Para executar o projeto no seu celular:
-1. Vá até a página do projeto no GitHub, na aba Code e clique no botão verde "Code".
-2. Clique em "Download ZIP".
-3. Extraia a pasta em um caminho conhecido no seu computador.
-4. No seguinte caminho você encontrará um arquivo .apk que pode ser baixado em um celular: app\build\outputs\apk\debug\app-debug.apk
-5. Ao executar o apk, o celular pedirá as devidas autorizações para que o aplicativo seja instalado no seu celular e então basta utilizá-lo normalmente.
+6. Para rodar no emulador, basta selecionar o emulador desejado na IDE e clicar no botão verde de play na barra de ferramentas. (RODANDO NO EMULADOR)
+7. Para rodar em um celular, é possível gerar um apk, clicando no seguinte caminho dentro da IDE Build > Build Bundle(s)/APK(s) > Build APK(s). Espere compilar e o arquivo .apk estará no seguinte caminho: app\build\outputs\apk\debug\app-debug.apk (RODANDO NO CELULAR)
+8. Basta baicar o apk em um aparelho Android e após as autorizações do sistema, instalar e rodar o app.
