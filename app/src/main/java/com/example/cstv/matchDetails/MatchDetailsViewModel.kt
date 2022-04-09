@@ -1,6 +1,5 @@
 package com.example.cstv.matchDetails
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.cstv.entities.ApiState
 import com.example.cstv.entities.TeamsItem
 import com.example.cstv.service.RetrofitClient
-import com.example.cstv.service.listeners.TeamsListeners
 import com.example.cstv.service.repository.RepositoryTeams
 import kotlinx.coroutines.launch
 
