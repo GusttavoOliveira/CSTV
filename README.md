@@ -27,5 +27,5 @@ Para executar o projeto no seu celular:
 1. Vá até a página do projeto no GitHub, na aba Code e clique no botão verde "Code".
 2. Clique em "Download ZIP".
 3. Extraia a pasta em um caminho conhecido no seu computador.
-4. No seguinte caminho você encontrará um arquivo .apk que pode ser baixado em um celular: 
+4. No seguinte caminho você encontrará um arquivo .apk que pode ser baixado em um celular: app\build\outputs\apk\debug\app-debug.apk
 5. Ao executar o apk, o celular pedirá as devidas autorizações para que o aplicativo seja instalado no seu celular e então basta utilizá-lo normalmente.
